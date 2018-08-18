@@ -1,0 +1,332 @@
+﻿
+@{
+    ViewBag.Title = "JsExercise";
+}
+<script src="~/Scripts/CS.js"></script>
+<h2>JsExercise</h2>
+
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    Please tour my JS Exercises and contact me if you have any questions.
+                </h4>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#math">Math</a></li>
+                    <li><a data-toggle="pill" href="#palindrome">Palidrome</a></li>
+                    <li><a data-toggle="pill" href="#factorial">Factorial</a></li>
+                    <li><a data-toggle="pill" href="#fizzbuzz">Fizz-Buzz</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="math" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Maths</h3>
+
+                            </div>
+                            <div class="col-md-12" style="padding-top: 10px; padding-bottom: 20px;">
+                                <p>Hello and welcome to the Fun With Math JS Exercise. Please enter 5 integers and I will perform a few mathematical operations.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">Enter number 1:</div>
+                                    <div class="col-md-6">
+                                        <input id="input1" type="number" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">Enter number 2:</div>
+                                    <div class="col-md-6">
+                                        <input id="input2" type="number" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">Enter number 3:</div>
+                                    <div class="col-md-6">
+                                        <input id="input3" type="number" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">Enter number 4:</div>
+                                    <div class="col-md-6">
+                                        <input id="input4" type="number" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">Enter number 5:</div>
+                                    <div class="col-md-6">
+                                        <input id="input5" type="number" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <button id="btnmath" class="btn btn-primary">Click Me</button>
+                                        <button id="btncodemath" class="btn btn-primary">Show/Hide Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p id="sum"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p id="product"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p id="smallest"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p id="largest"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p id="average"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="mathcode">
+                                    <pre class="brush: js">
+                                                    $("#btnmath").click(function () {
+            
+                                                    var num1 = Number($("#input1").val());
+                                                    var num2 = Number($("#input2").val());
+                                                    var num3 = Number($("#input3").val());
+                                                    var num4 = Number($("#input4").val());
+                                                    var num5 = Number($("#input5").val());
+
+       
+                                                    var sum = num1 + num2 + num3 + num4 + num5;
+                                                    var product = num1 * num2 * num3 * num4 * num5;
+                                                    var average = sum / 5;
+                                                    var smallest = Math.min(num1, num2, num3, num4, num5);
+                                                    var largest = Math.max(num1, num2, num3, num4, num5);
+
+        
+                                                    $("#sum").text("The sum is: " + sum);
+                                                    $("#product").text("The product is: " + product);
+                                                    $("#average").text("The average is: " + average);
+                                                    $("#smallest").text("The smallest number is: " + smallest);
+                                                    $("#largest").text("The largest number is: " + largest);
+                                                });
+                                             </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="palindrome" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Palindrome</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="padding-top: 10px; padding-bottom: 20px;">
+                                <p>Please enter a sentence and this will tell you if it is a palindrome. (A word backwards being the same word) Special characters such as !#$% etc. are taken out.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <p>Enter the Sentence to Check:</p>
+                                </div>
+                                <div class="row">
+                                    <div id="palout">
+
+                                    </div>
+                                    <input class="form-control" type="text" id="palin" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="row">
+
+                                    <button id="btnpa" class="btn btn-primary">Show/Hide Code</button>
+                                    <button id="btnpal" class="btn btn-primary">Check</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="pacode">
+                                    <pre class="brush: js">
+                                                    $("#btnfb").click(function () {
+
+                                        var num1 = Number($("#fbnum1").val());
+                                        var num2 = Number($("#fbnum2").val());
+
+
+                                                    var output = "";
+
+
+                                                    for (var loop = 1; loop <= 100; loop++) {
+
+                                                        if (loop % num1 == 0 && loop % num2 == 0) {
+
+                                                            output += "FizzBuzz, ";
+                                                        }
+                                                        else if (loop % num1 == 0) {
+
+                                                            output += "Fizz, ";
+                                                        }
+                                                        else if (loop % num2 == 0) {
+
+                                                            output += "Buzz, ";
+                                                        }
+                                                        else {
+
+                                                            output += loop + ", ";
+                                                        }
+                                                    }
+
+
+                                                    $("#fbout").text(output.substring(0, output.length - 2));
+                                                });
+
+                                                $("#btnclose").click(function () {
+
+                                                    $("#fbnum1").val("");
+                                                    $("#fbnum2").val("");
+                                                    $("#fbout").text("");
+                                                });
+                                             </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="factorial" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Factorial</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="padding-top: 10px; padding-bottom: 20px;">
+                                <p>Put in a number and it will return a factorial of this number. (A factorial is a number multipliyed by it's lower numbers I.e. 3 is ((3 * 2) * 1))</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Factorial Number:</p>
+                                <div class="row">
+                                    <div id="result">
+                                    </div>
+                                </div>
+                                <input class="form-control" type="number" id="factorialnumber" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" id="factorialBtn">Show/Hide Code</button>
+                                <button class="btn btn-primary" id="btnFacCalc">Calculate</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="factorialcode">
+                                    <pre class="brush: js">
+                                        $("#btnFacCalc").click(function () {
+                                        var newFactorial = Number($("#factorialnumber").val());
+                                        var result = 0;
+                                        var i;
+                                        if ($("#factorialnumber").val() != "" && newFactorial > 0) {
+                                            for (i = newFactorial - 1; i > 0; i--) {
+                                                newFactorial = newFactorial * i;
+                                                result = newFactorial;
+                                            }
+                                            $("#result").text("The factorial number : " + result)
+                                        } else {
+                                            $("#result").text("Please input value and the value is greater than 0 and it is numeric")
+                                        }
+                                    })
+                                     </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fizzbuzz" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Fizz-Buzz</h3>
+                            </div>
+                            <div class="col-md-12" style="padding-top: 10px; padding-bottom: 20px;">
+                                <p>Please enter 2 integers and I will run through the classic Fizz-Buzz exercise. This exercise relies mainly on the modulus operator to determine whether to print Fizz, Buzz or FizzBuzz based on the value of the loop counter mod the user input.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        Enter number 1:
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" id="fbnum1" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        Enter number 2:
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" id="fbnum2" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button type="button" id="fizzBizzBtn" class="btn btn-primary btn-lg">Show/Hide Code</button>
+                                    <button type="button" id="btnfb" class="btn btn-primary btn-lg">Click Me</button>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <p id="fbout"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="fizzbuzzcode">
+                                    <pre class="brush: js">
+                                            $("#btnpal").click(function () {
+                                            var word = $("#palin").val();
+                                            var revword = word.split('').reverse().join('');
+                                            if (word == revword) {
+                                                $("#palout").text(word + " is a palidrome");
+                                            } else {
+                                                $("#palout").text(word + " is not a palidrome");
+                                            }
+                                        });
+                                     </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnclose" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
